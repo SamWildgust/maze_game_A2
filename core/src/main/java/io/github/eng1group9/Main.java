@@ -44,7 +44,7 @@ public class Main extends ApplicationAdapter {
     final static String TMXPATH = "World/testMap.tmx";
 
     public static Player player;
-    private static boolean playerCaught = false; // Wether the player is currently being held by the Dean.
+    private static boolean playerCaught = false; // Whether the player is currently being held by the Dean.
     final float INITALPLAYERCAUGHTTIME = 1.2f;
     private float playerCaughtTime = INITALPLAYERCAUGHTTIME; // how many seconds the Dean will hold the player when caught.
     final Vector2 PLAYERSTARTPOS = new Vector2(16, 532); // Where the player begins the game, and returns to when caught.
