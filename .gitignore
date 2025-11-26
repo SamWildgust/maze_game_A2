@@ -1,0 +1,20 @@
+﻿# Gradle / Java
+.gradle/
+build/
+**/build/
+*.class
+*.iml
+/.idea/
+/out/
+*.log
+*.keystore
+
+# Gradle wrapper
+/gradle/wrapper/gradle-wrapper.jar
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Generated resources
+**/bin/
