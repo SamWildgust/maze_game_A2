@@ -1,5 +1,5 @@
-# mazegame
-
+# maze_game_A2
+Whenever anyone uploads a new version of the game make sure that its the main folder containing all other subfolders, etc to keep the automated build and the dependency graph happy.
 
 ## Build
 Run gradlew build and the jar will be in lwjgl3/build/libs
