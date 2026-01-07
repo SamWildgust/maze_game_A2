@@ -1,3 +1,3 @@
 Test Title
 
-<a href="/docs/my-paper.pdf">Read the PDF</a>
+<a href="/documents/Requirements Table Reference.pdf">Requirements document</a>
