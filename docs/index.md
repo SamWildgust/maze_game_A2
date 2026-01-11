@@ -1,6 +1,8 @@
 ## Group 4
 
 - [Requirements Document(Req2)](Req2.pdf)
+- [Continuous Integration Document (CI2)](CI2.pdf)
+- [User Evaluation Document (Eval2)](Eval2.pdf)
 - [Testing Phase 1](Testing%20phase%201.pdf)
 - [Testing Phase 2](Testing%20phase%202.pdf)
 - [Current JAR and Source Code](https://github.com/SamWildgust/maze_game_A2/releases/tag/CurrentGame)
