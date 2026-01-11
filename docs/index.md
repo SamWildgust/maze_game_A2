@@ -12,12 +12,12 @@
 
 ## Previous Team (Group 9)
 
-- [Architecture Document](Arch1.pdf)
-- [Risk Document](Risk1.pdf)
-- [Requirements document](Req1.pdf)
+- [Architecture Document (Arch1)](Arch1.pdf)
+- [Risk Document (Risk1)](Risk1.pdf)
+- [Requirements document (Req1)](Req1.pdf)
 - [Gantt document](Gantt.pdf)
-- [Implementation document](Impl1.pdf)
-- [Planning document](Plan1.pdf)
+- [Implementation document(Impl1)](Impl1.pdf)
+- [Planning document (Plan1)](Plan1.pdf)
 - [Design Iterations document](DesignIterations.pdf)
 - [Previous Team JAR](https://github.com/SamWildgust/maze_game_A2/releases/tag/PreviousTeamJar)
 - [Requirements Table](Requirements%20Table%20Reference.pdf)
