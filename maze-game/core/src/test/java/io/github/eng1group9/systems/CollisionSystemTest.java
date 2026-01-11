@@ -28,6 +28,15 @@ public class CollisionSystemTest {
         mockMap = mock(TiledMap.class);
         mockMapLayer = mock(MapLayer.class);
         mockMapObjects = mock(MapObjects.class);
+        createCollisionLayer();
+    }
+
+    // Helper method to set up the collision layer in the mocked map
+    private void createCollisionLayer() {
+        MapLayers mockLayers = mock(MapLayers.class);
+        when(mockMap.getLayers()).thenReturn(mockLayers);
+        when(mockLayers.get("Collision")).thenReturn(mockMapLayer);
+        when(mockMapLayer.getObjects()).thenReturn(mockMapObjects);
     }
 
     /**
@@ -36,22 +45,17 @@ public class CollisionSystemTest {
      */
     @Test
     public void testInitCollisionCreation() {
-        when(mockMap.getLayers()).thenReturn(mock(com.badlogic.gdx.maps.MapLayers.class));
-        
-        when(mockMap.getLayers().get("Collision")).thenReturn(mockMapLayer);
-        
-        when(mockMapLayer.getObjects()).thenReturn(mockMapObjects);
         
         // Create two different collision rectangles
         RectangleMapObject rectangle1 = new RectangleMapObject(0, 0, 10, 10);
         RectangleMapObject rectangle2 = new RectangleMapObject(20, 20, 15, 15);
         
-        
+        // Mock the map objects to return both rectangles
         when(mockMapObjects.iterator()).thenReturn(java.util.List.<MapObject>of(rectangle1, rectangle2).iterator());
         
         collisionSystem.init(mockMap);
         
-        // Assert that both rectangles were added to the collision system
+        // Asserts that both rectangles were added to the collision system
         assertEquals(2, collisionSystem.getWorldCollision().size());
     }
 
@@ -61,16 +65,11 @@ public class CollisionSystemTest {
      */
     @Test
     public void testInitNamedObjects() {
-        when(mockMap.getLayers()).thenReturn(mock(com.badlogic.gdx.maps.MapLayers.class));
-
-        when(mockMap.getLayers().get("Collision")).thenReturn(mockMapLayer);
-
-        when(mockMapLayer.getObjects()).thenReturn(mockMapObjects);
         
         // Create one unnamed and one named rectangle
         RectangleMapObject rectangle1 = new RectangleMapObject(0, 0, 10, 10);
         RectangleMapObject rectangle2 = new RectangleMapObject(20, 20, 15, 15);
-        rectangle2.setName("wall1");
+        rectangle2.setName("wall");
         when(mockMapObjects.iterator()).thenReturn(java.util.List.<MapObject>of(rectangle1, rectangle2).iterator());
         
         collisionSystem.init(mockMap);
@@ -86,15 +85,10 @@ public class CollisionSystemTest {
      */
     @Test
     public void testSafeToMove() {
-        when(mockMap.getLayers()).thenReturn(mock(com.badlogic.gdx.maps.MapLayers.class));
-
-        when(mockMap.getLayers().get("Collision")).thenReturn(mockMapLayer);
-
-        when(mockMapLayer.getObjects()).thenReturn(mockMapObjects);
         
         // Create collision at far position (100, 100)
-        RectangleMapObject rectObj = new RectangleMapObject(100, 100, 20, 20);
-        when(mockMapObjects.iterator()).thenReturn(java.util.List.<MapObject>of(rectObj).iterator());
+        RectangleMapObject rectangle = new RectangleMapObject(100, 100, 20, 20);
+        when(mockMapObjects.iterator()).thenReturn(java.util.List.<MapObject>of(rectangle).iterator());
         
         collisionSystem.init(mockMap);
         
@@ -104,16 +98,15 @@ public class CollisionSystemTest {
     }
 
     @Test
+    /**
+     * Test that safeToMove() returns false when there is a collision overlap.
+     * Verifies that overlapping collision objects block movement.
+     */
     public void testNotSafeToMove() {
-        when(mockMap.getLayers()).thenReturn(mock(com.badlogic.gdx.maps.MapLayers.class));
-
-        when(mockMap.getLayers().get("Collision")).thenReturn(mockMapLayer);
-
-        when(mockMapLayer.getObjects()).thenReturn(mockMapObjects);
         
         // Create collision at position (5, 5)
-        RectangleMapObject rectObj = new RectangleMapObject(5, 5, 20, 20);
-        when(mockMapObjects.iterator()).thenReturn(java.util.List.<MapObject>of(rectObj).iterator());
+        RectangleMapObject rectangle = new RectangleMapObject(0, 0, 10, 10);
+        when(mockMapObjects.iterator()).thenReturn(java.util.List.<MapObject>of(rectangle).iterator());
         
         collisionSystem.init(mockMap);
         
@@ -121,4 +114,25 @@ public class CollisionSystemTest {
         Rectangle hitbox = new Rectangle(10, 10, 16, 16);
         assertFalse(collisionSystem.safeToMove(0, 0, hitbox));
     }
+
+    /**
+     * Test removeCollisionByName() by creating a named rectangle and attempting to remove 
+     * a rectangle with a different name.
+     * Verifies that the collision list remains unchanged when no matching name is found.
+     */
+    @Test
+    public void testRemoveCollision() {
+        // Create one rectangle with a name
+        RectangleMapObject rectangle = new RectangleMapObject(0, 0, 10, 10);
+        rectangle.setName("wall");    
+
+        when(mockMapObjects.iterator()).thenReturn(java.util.List.<MapObject>of(rectangle).iterator());
+        collisionSystem.init(mockMap);
+
+        // Attempt to remove a rectangle with a different name
+        collisionSystem.removeCollisionByName("floor");
+        // Assert that the collision list still contains the original rectangle
+        assertEquals(1, collisionSystem.getWorldCollision().size());
+    }
+
 }
