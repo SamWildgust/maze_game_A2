@@ -1,6 +1,8 @@
 Test Title
 
 <a href="/documents/Requirements Table Reference.pdf">Requirements document</a>
+<a href="/documents/Testing phase 1.pdf">Requirements document</a>
+<a href="/documents/Testing phase 2.pdf">Requirements document</a>
 
 Previous Team
 <a href="/documents/Arch1.pdf">Architecture Document</a>
