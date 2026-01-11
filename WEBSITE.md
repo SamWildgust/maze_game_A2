@@ -1,5 +1,4 @@
-Test Title
-
+Group 4:
 <a href="/documents/Requirements Table Reference.pdf">Requirements document</a>
 <a href="/documents/Testing phase 1.pdf">Testing Phase 1</a>
 <a href="/documents/Testing phase 2.pdf">Testing Phase 2</a>
@@ -8,7 +7,7 @@ Test Title
 <a href="https://github.com/SamWildgust/maze_game_A2/releases/tag/CurrentGame">Current JAR and Source Code</a>
 
 
-Previous Team
+Previous Team (Group 9):
 <a href="/documents/Arch1.pdf">Architecture Document</a>
 <a href="/documents/Risk.pdf">Risk Document</a>
 <a href="/documents/Req1.pdf">Requirements document</a>
