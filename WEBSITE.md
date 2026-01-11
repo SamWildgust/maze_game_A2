@@ -10,7 +10,7 @@ Previous Team
 <a href="/documents/Impl1.pdf">Implementation document</a>
 <a href="/documents/Plan1.pdf">Planning document</a>
 <a href="/documents/DesignIterations.pdf">Design Iterations document</a>
-<a href="https://github.com/USERNAME/REPO/releases/download/v1.2.0/your-app.jar](https://github.com/SamWildgust/maze_game_A2/releases/tag/PreviousTeamJar">
+<a href="https://github.com/SamWildgust/maze_game_A2/releases/tag/PreviousTeamJar">
   Previous Team JAR
 </a>
 
