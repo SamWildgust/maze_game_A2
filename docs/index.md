@@ -17,6 +17,7 @@
 - [Implementation document](Impl1.pdf)
 - [Planning document](Plan1.pdf)
 - [Design Iterations document](DesignIterations.pdf)
-- [Previous Team JAR](https://github.com/SamWildgust/maze_game_A2/releases/tag/PreviousTeamJar) 
+- [Previous Team JAR](https://github.com/SamWildgust/maze_game_A2/releases/tag/PreviousTeamJar)
+- [Requirements Table](Requirements%20Table%20Reference.pdf)
 
 ---
