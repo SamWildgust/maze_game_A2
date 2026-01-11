@@ -4,6 +4,10 @@ Test Title
 <a href="/documents/Testing phase 1.pdf">Testing Phase 1</a>
 <a href="/documents/Testing phase 2.pdf">Testing Phase 2</a>
 
+
+<a href="https://github.com/SamWildgust/maze_game_A2/releases/tag/CurrentGame">Current JAR and Source Code</a>
+
+
 Previous Team
 <a href="/documents/Arch1.pdf">Architecture Document</a>
 <a href="/documents/Risk.pdf">Risk Document</a>
@@ -12,7 +16,5 @@ Previous Team
 <a href="/documents/Impl1.pdf">Implementation document</a>
 <a href="/documents/Plan1.pdf">Planning document</a>
 <a href="/documents/DesignIterations.pdf">Design Iterations document</a>
-<a href="https://github.com/SamWildgust/maze_game_A2/releases/tag/PreviousTeamJar">
-  Previous Team JAR
-</a>
+<a href="https://github.com/SamWildgust/maze_game_A2/releases/tag/PreviousTeamJar">Previous Team JAR</a>
 
