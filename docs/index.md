@@ -6,7 +6,7 @@
 - [Testing Phase 1](Testing%20phase%201.pdf)
 - [Testing Phase 2](Testing%20phase%202.pdf)
 - [Current JAR and Source Code](https://github.com/SamWildgust/maze_game_A2/releases/tag/CurrentGame)
-- [Record Of Testing](Record%20of%20testing.pdf)
+- [Record Of Testing](Record%20of%20testing.pdf) 
 
 ---
 
