@@ -19,8 +19,8 @@ import com.badlogic.gdx.math.Vector2;
 */
 public class Entity {
 
-    private Texture missingTexture = new Texture("missingTexture.png"); // Used if no texture is avalible for the entity. 
-    private Sprite sprite = new Sprite(missingTexture);
+    private Texture missingTexture; // lazily set when a texture is provided
+    private Sprite sprite;
     private Rectangle hitbox = new Rectangle(); 
     private boolean canCollide = true; // wether the entity will collide with other entitys / rectangles.
     private float scale = 1;
@@ -28,7 +28,9 @@ public class Entity {
     private float height;
 
     public Entity(Texture texture, Vector2 startPosition, float width, float height) {
-        sprite.setTexture(texture);
+        // Do not create new Textures here; tests may run without libGDX initialisation.
+        sprite = new Sprite();
+        if (texture != null) sprite.setTexture(texture);
         this.width = width;
         this.height = height;
         sprite.setSize(width, height);
@@ -37,9 +39,24 @@ public class Entity {
     }
 
     public Entity(Vector2 startPosition, float width, float height) {
+        sprite = new Sprite();
+        this.width = width;
+        this.height = height;
         sprite.setSize(width, height);
         sprite.setPosition(startPosition.x, startPosition.y);
         hitbox.set(startPosition.x  + 16, startPosition.y  + 16, width, 16);
+    }
+
+    /**
+     * Test-friendly no-arg constructor that avoids any Texture creation.
+     */
+    protected Entity() {
+        sprite = new Sprite();
+        this.width = 32;
+        this.height = 32;
+        sprite.setSize(width, height);
+        sprite.setPosition(0, 0);
+        hitbox.set(0 + 16, 0 + 16, width, 16);
     }
 
     /**

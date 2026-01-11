@@ -27,6 +27,14 @@ public class Player extends MovingEntity {
     }
 
     /**
+     * Test-friendly constructor which avoids Texture creation.
+     */
+    protected Player() {
+        super();
+        setScale(2);
+    }
+
+    /**
      * @return wether the player has the key to open the exit.
      */
     public boolean hasExitKey() {

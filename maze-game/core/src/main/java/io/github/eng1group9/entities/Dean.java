@@ -16,8 +16,14 @@ public class Dean extends MovingEntity {
     private float nextTileDistance = 32;
     private Character[] path;
     private Rectangle reachRectangle;
-    final Vector2 STARTPOS;
+    Vector2 STARTPOS;//this can't be final if we want to change/set it within a test
 
+    /**
+     * the default constructor for the Dean. 
+     * @param startPos starting position on the tiled map.
+     * @param speed speed at which it moves in specified path.
+     * @param path sequence of directions dean will move in, this loops.
+    */
     public Dean(Vector2 startPos, float speed, Character[] path) {
         super(new Texture("Characters/deanAnimations.png"), new int[] {4, 4,4,4} , 32, 32, speed);
         setScale(2);
@@ -33,30 +39,52 @@ public class Dean extends MovingEntity {
     }
 
     /**
+     * constructor to setup dean for tests thus has no parameters
+     */
+    protected Dean() {
+
+        super();
+        setScale(2);
+        setHitbox(new Rectangle());
+
+        reachRectangle = new Rectangle();
+        this.path = new Character[0];
+        STARTPOS = new Vector2(0,0);
+
+        nextTileDistance = 32;
+    }
+
+    /**
      * Move the dean along its set path.
      * It will move in a given direction until it has moved one tile, then look at the next direction. 
      */
     public void nextMove() {
+
         Character direction = getNextDirection();
         float distance = move(direction);
+
         nextTileDistance -= distance;
+
         if (!isFrozen()) updateAnimation(direction);
+
         reachRectangle.setPosition(getX() - 32, getY() - 42);
-        haveIMovedOneTile();
+        hasTheDeanMovedOneTile();
     }
 
     /**
-     * Check if the Dean has move on tile yet, and if so move on to the next step in its path.
+     * move onto next tile of seq. if the dean has moved one tile.
      */
-    private void haveIMovedOneTile() {
+    private void hasTheDeanMovedOneTile() {
+
         if (nextTileDistance <= 0) {
+
             nextTileDistance = 32;
             moveNum++;
         }
     }
 
     /**
-     * @return The direction the dean should move in next. 
+     * @return the direction the dean should move in next. 
      */
     private Character getNextDirection() {
         if (moveNum >= path.length) {

@@ -38,6 +38,16 @@ public class AnimatedEntity extends Entity{
     }
 
     /**
+     * Test-friendly no-texture constructor. Leaves animations empty and
+     * initialises base Entity position/size so tests can instantiate
+     * subclasses without triggering libGDX texture loading.
+     */
+    protected AnimatedEntity() {
+        super(new Vector2(0,0), 32, 32);
+        // animations list already initialised; leave empty for tests
+    }
+
+    /**
      * Use this to change the animation being played.
      * Will have no effect if the animation is already playing.
      *

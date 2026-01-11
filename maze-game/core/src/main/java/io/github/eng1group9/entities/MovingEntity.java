@@ -21,6 +21,14 @@ public class MovingEntity extends AnimatedEntity {
     }
 
     /**
+     * Test friendly untextured constructor.
+     */
+    protected MovingEntity() {
+        super();
+        this.speed = 0;
+    }
+
+    /**
      * Update the speed of the entity. 
      * @param newSpeed - How fast the entity will now move.
      */
