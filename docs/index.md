@@ -13,7 +13,7 @@
 ## Previous Team (Group 9)
 
 - [Architecture Document](Arch1.pdf)
-- [Risk Document](Risk.pdf)
+- [Risk Document](Risk1.pdf)
 - [Requirements document](Req1.pdf)
 - [Gantt document](Gantt.pdf)
 - [Implementation document](Impl1.pdf)
