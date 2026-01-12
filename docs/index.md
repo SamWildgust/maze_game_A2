@@ -7,7 +7,6 @@
 - [Planning Document (Plan2)](Plan2.pdf)
 - [Risk Document (Risk2)](Risk2.pdf)
 - [Architecture Document (Arch2)](Arch2.pdf)
-- [Change Report (Change2)](Change2.pdf)
 - [Test Document (Test2)](Test2.pdf) 
 - [Testing Phase 1](Testing%20phase%201.pdf)
 - [Testing Phase 2](Testing%20phase%202.pdf)
